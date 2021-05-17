@@ -1,0 +1,29 @@
+<!doctype html >
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<form action="incoming.php" method="post" >
+
+<input type="text" name=""> name="product" type="text" style="width:350px; "class="chzn-select" required
+	
+	 <?php
+	include('db/connect.php');
+	$result = $db->prepare("SELECT * FROM tbproduct");
+		$result->bindParam(':userid', $res);
+		$result->execute();
+		for($i=0; $row = $result->fetch(); $i++){
+	?>
+		value="<?php echo $row['id'];?>"><?php echo $row['product_name']; ?>
+		        		
+
+	<?php
+				}
+			?> 
+			> 
+
+</body>
+</html>

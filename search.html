@@ -1,0 +1,29 @@
+
+<?php
+
+include('')
+$output = '';
+if(isset($_Post['productname']))
+{
+$pname = $_Post['productname'];
+
+$query = mysql_query("select * from tbproduct where product_name like '%$pname%'");
+$count = mysql_num_rows($query);
+if($count = 0){
+  $output = 'No item match your search';
+}else{
+while ($row = mysql_fetch_array($query))
+ {
+
+  $product = $row['product_name'];
+  $pid = $row['id'];
+  $output .=$product
+
+}
+
+}
+
+
+}
+
+?>
